@@ -6,13 +6,13 @@ import org.junit.Test;
 public class ExceptionThrowerTest {
 
 	@Test
-	public void throwACustomExceptionWhenValueIs42_with_42() {
+	public void throwACustomExceptionWhenValueIs42_with_42() throws Value42Exception{
 		Assertions.assertThatThrownBy(() -> new ExceptionThrower().throwACustomExceptionWhenValueIs42(42))
 			.isInstanceOf(RuntimeException.class);
 	}
 
 	@Test
-	public void throwACustomExceptionWhenValueIs42_with_any_other_value() {
+	public void throwACustomExceptionWhenValueIs42_with_any_other_value() throws Value42Exception {
 		ExceptionThrower exercise1 = new ExceptionThrower();
 		for (int i = 0; i < 100; i++) {
 			if (i != 42) {
